@@ -1,0 +1,314 @@
+/* CSS By Joe Chacon */
+
+/* Imported Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Root Variables */
+:root {
+    --midnight-blue: #1F2A44;
+    --olive-green: #76885B;
+    --champagne-gold: #E5C185;
+    --linen: #F8F4EC;
+    --dark-charcoal: #2B2B2B;
+    --soft-white: #FAF9F6;
+
+    --heading-font: 'Playfair Display', serif;
+
+    --radius: 10px;
+}
+
+/* Global Styles (mobile first/small) */
+body {
+    font-family: var(--heading-font);
+    background-color: var(--soft-white);
+    color: var(--dark-charcoal);
+    font-size: 1rem;
+}
+
+.site-header {
+    background-color: var(--midnight-blue);
+    color: var(--soft-white);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.site-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.site-header .tagline {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.logo-wrapper img {
+    max-width:40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+nav {
+    background-color: var(--champagne-gold);
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+nav a {
+    color: var(--dark-charcoal);
+    text-decoration: none;
+}
+
+main {
+    padding: 1rem 1rem;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--midnight-blue);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.about p {
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--champagne-gold);
+    margin: 1rem;
+}
+
+.offerings {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.offering-card {
+    background-color: var(--olive-green);
+    color: var(--linen);
+    border-radius: var(--radius);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.offering-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.offering-card ul {
+    list-style-type: disc;
+    padding-left: 1rem;
+    margin: 0.5rem;
+}
+
+.offering-card li {
+    margin-top: 0.5rem;
+}
+
+.gallery p {
+    margin-bottom: 1rem;
+}
+
+.gallery figure {
+    margin-bottom: 1rem;
+    background-color: var(--linen);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery figure img {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.gallery figcaption {
+    font-style: italic;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+}
+
+.gallery-button-wrapper {
+    text-align: center;
+}
+
+.gallery-button {
+    text-decoration: none;
+    display: block;
+    background-color: var(--olive-green);
+    font-weight: bold;
+    color: var(--linen);
+    padding: 1rem 2rem;
+    border-radius: var(--radius);
+}
+
+.site-footer {
+    background-color: var(--midnight-blue);
+    color: var(--linen);
+    text-align: center;
+
+    padding: 4rem 2rem;
+}
+
+.footer-contact a:first-of-type {
+    color: var(--linen);
+}
+
+.site-footer a {
+    color: var(--champagne-gold);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+/* Media Query (Medium) */
+@media screen and (min-width: 600px) {
+    .offerings {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 1rem;
+    }
+
+    .offerings .span-two {
+        grid-column: span 2;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-button-wrapper {
+        grid-column: span 2;
+    }
+}
+
+/* Media Query (Large) */
+@media screen and (min-width: 900px) {
+    .offerings {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .offerings .span-two {
+        grid-column: span 2;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .gallery-button-wrapper {
+        grid-column: span 3;
+    }
+}
+
+/* Media Query (xl) */
+@media screen and (min-width: 1200px) {
+    .offerings {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        max-width: 1200px;
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .offerings .span-two {
+        grid-column: span 2;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+    }
+
+    .gallery figure {
+        width: 100%;
+    }
+
+    .gallery-button-wrapper {
+        grid-column: span 5;
+        text-align: center;
+    }
+
+    main {
+        padding: 5rem;
+    }
+}
